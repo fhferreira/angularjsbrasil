@@ -1,9 +1,12 @@
 O foco dessa série é ensinar AngularJs e criar situações que o AngularJs possa ser a solução.
 
 <ol>
-	<li>Introdução</li>
-	<li>MVC</li>
-	<li>Olá Mundo com AngularJs</li>
+	<li>Introdução&#10004;</li>
+	<li>MVC&#10004;</li>
+	<li>MVVM</li>
+	<li>HandleBars</li>
+	<li>Iniciando uma aplicação&#10004;</li>
+	<li>Olá Mundo&#10004;</li>
 	<li>Scope</li>
 	<li>Injeção de Dependências</li>
 	<li>Controllers</li>
@@ -47,7 +50,7 @@ Ex: Em um cadastro de produto, os campos para serem preenchidos são a View, a p
 
 Nota: JSON, um acrônimo para "JavaScript Object Notation", é um formato leve para intercâmbio de dados computacionais. JSON é um subconjunto da notação de objeto de JavaScript, mas seu uso não requer JavaScript exclusivamente  - <a href="http://pt.wikipedia.org/wiki/JSON">Wikipedia</a>
 
-# 3 - Iniciando uma aplicação
+# Iniciando uma aplicação
 
 Para iniciar uma aplicação no corpo HTML é necessário inserir as referências do AngulaJS nos scripts.
 
@@ -124,7 +127,7 @@ Ex com div
 
 A diferença entre a directiva no ```head``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se fizer algo fora da ```div``` não terá resultados.
 
-# 4 - Olá Mundo com AngularJs
+# Olá Mundo
 
 Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. Conforme falamos em MVVM...
 
@@ -142,15 +145,3 @@ Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriorment
 </body>
 </html>
 ```
-<!DOCTYPE html>
-<html>
-<head>
-	<title>AngularJs</title>
-</head>
-<body ng-app>
-<input type="text" ng-model="nome">
-<p>{{nome}}</p>
-<script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.11/angular-route.min.js"></script>
-</body>
-</html>
