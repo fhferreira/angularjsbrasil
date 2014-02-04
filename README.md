@@ -1,13 +1,15 @@
 O foco dessa série é ensinar AngularJs e criar situações que o AngularJs possa ser a solução.
 
-1 - Introdução
-2 - Iniciando uma aplicação
-3 - Olá Mundo com AngularJs
-4 - Controllers
-5 - Routers
-6 - Services
-7 - Filters
-100- Dicionário
+<ol>
+	<li>Introdução</li>
+	<li>Iniciando uma aplicação</li>
+	<li>Olá Mundo com AngularJs</li>
+	<li>Controllers</li>
+	<li>Routers</li>
+	<li>Services</li>
+	<li>Filters</li>
+</ol>
+
 
 # Introdução
 	
