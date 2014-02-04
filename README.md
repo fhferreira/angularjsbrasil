@@ -24,7 +24,8 @@ AngularJs é um framework JavaScript MVC/MVVM, fácil de ser aprendido e a curva
 
 Para iniciar uma aplicação no corpo HTML é necessário inserir as referências do AngulaJS nos scripts.
 
-```html
+```
+<!DOCTYPE html>
 <html>
 <head>
 	<title>AngularJs</title>
@@ -34,7 +35,8 @@ Para iniciar uma aplicação no corpo HTML é necessário inserir as referência
 <script src="http://code.angularjs.org/1.2.11/angular-route.min.js"></script>
 </body>
 </html>
-```html
+
+```
 
 O primeiro script é referente ao Angular e segundo script é referente as rotas, que irei explicar mais adiante.
 
