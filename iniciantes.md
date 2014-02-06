@@ -2,12 +2,13 @@
 
 <ol>
 	<li>Introdução&#10004;</li>
-	<li>AngularJs e Internet Explorer</li>
+	<li>AngularJs e Internet Explorer&#10004;</li>
 	<li>MVC&#10004;</li>
 	<li>MVVM</li>
 	<li>HandleBars&#10004;</li>
 	<li>Iniciando uma aplicação&#10004;</li>
 	<li>Olá Mundo&#10004;</li>
+	
 	<li>Scope</li>
 	<li>Controllers</li>
 	<li>Routers</li>
@@ -131,12 +132,11 @@ Ex com ```<div>```
 </html>
 ```
 
-A diferença entre a directiva no ```html``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se fizer algo fora da ```div``` não terá resultados.
+A diferença entre a directiva no ```html``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se criarmos algo fora da ```div``` não terá resultados.
 
 # Olá Mundo
 
-Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. Quando expliquei sobre handlebars, ficou muito vago em relação as váriaveis, mas agora chegou a hora.
-A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome". Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
+Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome". Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
 por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
 ```
