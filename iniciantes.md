@@ -9,7 +9,7 @@
 	<li>Iniciando uma aplicação&#10004;</li>
 	<li>Olá Mundo&#10004;</li>
 	<li>Controllers</li>
-	<li>Module</li>
+	<li>Module&#10004;</li>
 	<li>Scope</li>	
 	<li>Routers</li>
 </ol>
@@ -175,11 +175,13 @@ A primeira coisa a se fazer é criar uma variável e depois nomear o módulo.
 var App = angular.module('App',[]);
 
 A função "angular.module();", como já é alto declarável, cria um módulo.
-O parametro 'App' é a nomeação do módulo e fará a comunicação no HTML, na directiva ng-app, será inserido o parametro 'App' para a comunicação.
+O parametro 'App' é a nomeação do módulo e fará a comunicação no HTML, na directiva ng-app,
+será inserido o parametro 'App' para a comunicação.
 
 Ficando desse jeito <html ng-app="App">
 
-Dentro dos couchetes ficam as referências de outros módulos, digamos que tem o módulo de controllers, então fica assim:
+Dentro dos couchetes ficam as referências de outros módulos, digamos que tem o módulo de controllers,
+então fica assim:
 
 var App = angular.module('App',['Controllers']);
 
