@@ -49,6 +49,9 @@ Vamos entender melhor como funciona:
 Ex: Em um cadastro de produto, os campos para serem preenchidos são a View, a partir do momento que você envia as informações do produto para serem cadastradas, essas informações passam pela Control, que verifica campos preenchidos, formatos e etc. E após isso conversa com a Model para enviar as informações ao banco de dados.
 
 Nota: JSON, um acrônimo para "JavaScript Object Notation", é um formato leve para intercâmbio de dados computacionais. JSON é um subconjunto da notação de objeto de JavaScript, mas seu uso não requer JavaScript exclusivamente  - <a href="http://pt.wikipedia.org/wiki/JSON">Wikipedia</a>
+# HandleBars
+
+O handlebars são os caracteres especiais ```{{algumacoisa}}```, eles que fazem a renderização das informações de variáveis do AngularJs, porém isso fica muito vago na explicação. No ***Olá Mundo***, explicarei melhor.
 
 # Iniciando uma aplicação
 
@@ -86,7 +89,7 @@ A directiva principal do angular é a ***ng-app***, é ela que dirá ao angular 
 </html>
 ```
 
-A directiva ***ng-app*** pode ser incluida no ```head``` ou ```body``` ou em uma ```div``` qualquer.
+A directiva ***ng-app*** pode ser incluida no ```html``` ou ```body``` ou em uma ```div``` qualquer.
 
 Ex com head:
 ```
@@ -125,11 +128,13 @@ Ex com div
 </html>
 ```
 
-A diferença entre a directiva no ```head``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se fizer algo fora da ```div``` não terá resultados.
+A diferença entre a directiva no ```html``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se fizer algo fora da ```div``` não terá resultados.
 
 # Olá Mundo
 
-Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. Conforme falamos em MVVM...
+Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. Quando expliquei sobre handlebars, ficou muito vago em relação as váriaveis, mas agora chegou a hora.
+A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome". Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
+por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
 ```
 <!DOCTYPE html>
@@ -139,9 +144,10 @@ Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriorment
 </head>
 <body ng-app>
 <input type="text" ng-model="nome">
-<p>{{nome}}</p>
+<p>Olá {{nome}}</p>
 <script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
 <script src="http://code.angularjs.org/1.2.11/angular-route.min.js"></script>
 </body>
 </html>
 ```
+<a href="http://codepen.io/nicholasess/pen/AslmG">Visualizar exemplo na prática</a>
