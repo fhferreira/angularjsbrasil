@@ -8,9 +8,9 @@
 	<li>HandleBars&#10004;</li>
 	<li>Iniciando uma aplicação&#10004;</li>
 	<li>Olá Mundo&#10004;</li>
-	
-	<li>Scope</li>
 	<li>Controllers</li>
+	<li>Module</li>
+	<li>Scope</li>	
 	<li>Routers</li>
 </ol>
 
@@ -134,7 +134,7 @@ Ex com ```<div>```
 
 A diferença entre a directiva no ```html``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se criarmos algo fora da ```div``` não terá resultados.
 
-# Olá Mundo
+## Olá Mundo
 
 Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome". Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
 por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
@@ -153,4 +153,43 @@ por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 </body>
 </html>
 ```
+
 <a href="http://codepen.io/nicholasess/pen/AslmG" target="_blank">Visualizar exemplo na prática</a>
+
+## Controllers
+
+Em construção
+
+## Module
+
+O AngularJs é composto por módulo, como assim?
+Para cada módulo se cria um arquivo, assim fica melhor para gerir o sistema. 
+Digamos que o sistema tem os arquivos [app.js, controller.js], o app.js referência ao módulo "central" do AngularJs, onde estará ligado ao HTML, é nele que definimos quais módulos conversarão com o módulo "central" e definiremos as rotas. No arquivo controller.js ficará as controllers que iremos definir nas rotas ou controllers avulsas.
+
+Para se criar um módulo "central", onde referenciará ao arquivo app.js, temos que nomear esse módulo de forma que quando o AngularJs ler o arquivo HTML, o mesmo consiga acessar o arquivo necessário para se manter a comunicação.
+Na prática fica assim:
+
+```
+A primeira coisa a se fazer é criar uma variável e depois nomear o módulo.
+
+var App = angular.module('App',[]);
+
+A função "angular.module();", como já é alto declarável, cria um módulo.
+O parametro 'App' é a nomeação do módulo e fará a comunicação no HTML, na directiva ng-app, será inserido o parametro 'App' para a comunicação.
+
+Ficando desse jeito <html ng-app="App">
+
+Dentro dos couchetes ficam as referências de outros módulos, digamos que tem o módulo de controllers, então fica assim:
+
+var App = angular.module('App',['Controllers']);
+
+```
+Obs: Somente o módulo "central" será referenciado no HTML, o restante será interligado nos couchetes.
+
+## Scope
+
+Em construção
+
+## Routers
+
+Em construção
