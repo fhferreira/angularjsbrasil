@@ -8,10 +8,12 @@
 	<li>HandleBars&#10004;</li>
 	<li>Iniciando uma aplicação&#10004;</li>
 	<li>Olá Mundo&#10004;</li>
-	<li>Controllers</li>
 	<li>Module&#10004;</li>
 	<li>Scope</li>	
 	<li>Routers</li>
+	<li>Controllers</li>
+	
+	
 </ol>
 
 
@@ -156,13 +158,9 @@ por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
 <a href="http://codepen.io/nicholasess/pen/AslmG" target="_blank">Visualizar exemplo na prática</a>
 
-## Controllers
-
-Em construção
-
 ## Module
 
-O AngularJs é composto por módulo, como assim?
+O AngularJs é composto por módulo, como assim?<br>
 Para cada módulo se cria um arquivo, assim fica melhor para gerir o sistema. 
 Digamos que o sistema tem os arquivos [app.js, controller.js], o app.js referência ao módulo "central" do AngularJs, onde estará ligado ao HTML, é nele que definimos quais módulos conversarão com o módulo "central" e definiremos as rotas. No arquivo controller.js ficará as controllers que iremos definir nas rotas ou controllers avulsas.
 
@@ -195,3 +193,33 @@ Em construção
 ## Routers
 
 Em construção
+
+## Controllers
+
+Vamos aprofundar mais um pouco!
+A explicação de controllers (Control) já foi feita, em relação ao AngularJs, funciona da seguinte maneira. 
+Temos duas formas de criar controllers:
+A primeira inserimos diretamente no html e referimos a controller pela diretiva ```ng-controller```, dentro da directiva indicamos o nome da controller. E no código javascript escrevemos o que a controller irá fazer.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJs</title>
+</head>
+<body ng-app>
+<div ng-controller="Ctrl">
+<p>Olá {{nome}}</p>
+</div>
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+<script type="text/javascript">
+function Ctrl($scope){
+	$scope.nome = "Mundo";
+}
+</script>
+</body>
+</html>
+
+``` 
+
