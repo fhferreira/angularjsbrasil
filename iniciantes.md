@@ -208,13 +208,13 @@ A primeira inserimos diretamente no html e referimos a controller pela diretiva 
 	<title>AngularJs</title>
 </head>
 <body ng-app>
-<div ng-controller="Ctrl">
+<div ng-controller="MainCtrl">
 <p>Olá {{nome}}</p>
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
 <script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
 <script type="text/javascript">
-function Ctrl($scope){
+function MainCtrl($scope){
 	$scope.nome = "Mundo";
 }
 </script>
@@ -222,4 +222,82 @@ function Ctrl($scope){
 </html>
 
 ``` 
+
+Podemos criar através do módulo em um arquivo js e referenciamos a controller em outro arquivo.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJs</title>
+</head>
+<body ng-app="App">
+<div ng-controller="MainCtrl">
+<p>Olá {{nome}}</p>
+</div>
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>
+
+```
+
+No arquivo app.js fica assim:
+
+```
+var App = angular.module('App',['Controller']);
+```
+
+No arquivo controller.js fica assim:
+
+```
+var Ctrl = angular.module('Controller',[]);
+Ctrl.controller('MainCtrl', function($scope){
+	$scope.nome = "Mundo";
+});
+```
+
+Ou podemos fazer com rotas que daria o mesmo resultado.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>AngularJs</title>
+</head>
+<body ng-app="App">
+<div ng-view></div>
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>
+
+```
+
+No arquivo app.js fica assim:
+
+```
+var App = angular.module('App',['Controller']);
+App.config(['$routeProvider',function($routeProvider){
+ $routeProvider.when('/', 
+ {
+     templateUrl: 'home.html',
+     controller: 'MainCtrl'
+ });
+)]);
+```
+
+No arquivo controller.js fica assim:
+
+```
+var Ctrl = angular.module('Controller',[]);
+Ctrl.controller('MainCtrl', function($scope){
+	$scope.nome = "Mundo";
+});
+```
+
 
