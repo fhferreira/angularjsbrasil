@@ -4,7 +4,7 @@
 	<li>Introdução&#10004;</li>
 	<li>AngularJs e Internet Explorer&#10004;</li>
 	<li>MVC&#10004;</li>
-	<li>MVVM</li>
+	<li>DataBind</li>
 	<li>HandleBars&#10004;</li>
 	<li>Iniciando uma aplicação&#10004;</li>
 	<li>Olá Mundo&#10004;</li>
@@ -260,7 +260,9 @@ Ctrl.controller('MainCtrl', function($scope){
 ```
 
 Ou podemos fazer com rotas que daria o mesmo resultado.
+Primeiro vamos criar arquivo html que ficará a aplicação e outro arquivo html que será referenciado pela rota.
 
+index.html
 ```
 <!DOCTYPE html>
 <html>
@@ -276,6 +278,11 @@ Ou podemos fazer com rotas que daria o mesmo resultado.
 </body>
 </html>
 
+```
+
+home.html
+```
+<p>{{nome}}</p>
 ```
 
 No arquivo app.js fica assim:
@@ -299,5 +306,3 @@ Ctrl.controller('MainCtrl', function($scope){
 	$scope.nome = "Mundo";
 });
 ```
-
-
