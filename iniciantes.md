@@ -191,12 +191,40 @@ Em construção
 ## Rotas
 
 Vamos começar com uma pergunta, o que seria rotas? <br>
-Quando acessamos um site comum usando um servidor apache, o servidor redireciona para o diretório raiz da aplicação, "/", e que é configurado para buscar o arquivo index que pode ser de extensão .html,.php e etc. E se renomearmos o arquivo index para outro nome e atualizarmos o site, em vez de termos a página renderizada, aparecerá o diretório do site, pois o servidor não encontrou o index. Para se configurar de fato as rotas do servidor apache, é um pouco complicado, usando a partir do arquivo .htaccess. Geralmente, se criarmos arquivo .php sem .htaccess iremos chamar os arquivos que contêm o conteúdo do html ou da aplicação. Por exemplo, digamos que temos os arquivos index.php e sobre.php, no site ```www.exemplo.com.br``` buscamos o index através da url padrão que é ```www.exemplo.com.br``` ou ```www.exemplo.com.br/index.php```, para o sobre.php buscamos ```www.exemplo.com.br/sobre.php```. Com .htaccess iremos buscar ```www.exemplo.com.br``` ou ```www.exemplo.com.br/index``` e com sobre ```www.exemplo.com.br/sobre```.
+Quando acessamos um site comum usando um servidor apache, o servidor redireciona para o diretório raiz da aplicação, "/", onde é configurado para buscar o arquivo index que pode ser de extensão .html,.php e etc. E se renomearmos o arquivo index para outro nome e atualizarmos o site, em vez de termos a página renderizada, aparecerá o diretório do site, pois o servidor não encontrou o index. Para se configurar de fato as rotas do servidor apache, é um pouco complicado, usando a partir do arquivo .htaccess. Geralmente, se criarmos arquivo .php sem .htaccess iremos chamar os arquivos que contêm o conteúdo do html ou da aplicação. Por exemplo, digamos que temos os arquivos index.php e sobre.php, no site ```www.exemplo.com.br``` buscamos o index através da url padrão que é ```www.exemplo.com.br``` ou ```www.exemplo.com.br/index.php```, para o sobre.php buscamos ```www.exemplo.com.br/sobre.php```. Com .htaccess iremos buscar ```www.exemplo.com.br``` ou ```www.exemplo.com.br/index``` e com sobre ```www.exemplo.com.br/sobre```.
 
 No AngularJs é um pouco mais fácil, as rotas ficam idênticas ao .htacces no servidor apache, podemos criar um arquivo separado as rotas ou no mesmo arquivo do módulo "central", vamos a prática.
 
 ```
+O ensinamento será passo a passo para vocês entenderem e no final terá a função pronta.
 
+Primeiro declaramos o module do angular
+var app = angular.module('app',[]);
+
+Depois criamos uma função chamada config, onde será passado um parametro chamado $routeProvider, responsável por fazer as rotas da aplicação.
+app.config(function($routeProvider){});
+
+Dentro dessa função chamamos o $routeProvider e .when que será responsável por indicar ou melhor dizendo, routiar as rotas da aplicação. O significado é "quando", então, quando indicarmos uma url na aplicação o $routeProvider vai procurar as rotas que estão configuradas com ele.
+app.config(function($routeProvider){
+	$route.when();
+});
+
+Dentro do .when, vamos indicar a rota a ser configurada entre aspas e dentro de uma estrutura json vamos indicar a url da página que será chamada através do campo templateUrl. Dentro das aspas temos a url, 'views/home.html', que indica a pasta views e o arquivo html que irá conter informações relevantes a home da aplicação.
+app.config(function($routeProvider){
+	$route.when('/', 
+	{
+	    templateUrl: 'views/home.html'
+	});
+});
+
+No final ficamos assim:
+var app = angular.module('app',[]);
+app.config(function($routeProvider){
+	$route.when('/', 
+	{
+	    templateUrl: 'views/home.html'
+	});
+});
 ```
 Em construção
 
