@@ -10,20 +10,19 @@
 	<li>Olá Mundo&#10004;</li>
 	<li>Module&#10004;</li>
 	<li>Scope</li>	
-	<li>Routers</li>
-	<li>Controllers</li>
+	<li>Routers&#10004;</li>
+	<li>Controllers&#10004;</li>
 </ol>
 
 
 ## Introdução
 	
-O AngularJs surgiu em meados de 2009, foi criado por dois funcionários da Google e após um tempo a Google
-adotou o projeto, e hoje existe uma equipe focada somente no AngularJs.
-AngularJs é um framework JavaScript MVC/MVVM, fácil de ser aprendido e a curva de aprendizado é pequena em relação a outros frameworks. Como toda a linguagem, no começo é fácil, mas conforme vai se aprofundando, é necessário um pouco mais de atenção, mas não irá desanimar. O AngularJs é uma ferramenta essencial para quem deseja criar sistemas (web apps) com facilidade e ter todo controle do lado client (Front).
+O AngularJs surgiu em meados de 2009, foi criado por dois funcionários da Google e após um tempo a Google viu o potêncial do projeto e adotou, e hoje existe uma equipe focada somente no AngularJs.
+AngularJs é um framework JavaScript MVC/MVVM, fácil de ser aprendido e a curva de aprendizado é pequena em relação a outros frameworks. Como todo framework o começo é fácil, mas conforme vai se aprofundando, é necessário um pouco mais de atenção, mas não irá desanimar. O AngularJs é uma ferramenta essencial para quem deseja criar sistemas (web apps) com facilidade e ter todo controle do lado client (Front).
 
 ## AngularJs e Internet Explorer
 
-Não é recomendado que o IE6 e IE7 sejam usados em aplicações AngularJS. A falta de suporte a tags personalizadas e eventos por mudança de hash tornam a aplicação em si muito inchada e lenta. Apesar de termos algum suporte a eles, o AngularJS é recomendado somente para ser usado com navegadores de qualidade como (Chrome, Firefox, IE8+, Safari e Opera). Esforce em evitar o uso do AngularJS com IE6 e IE7 e tudo vai estar bem.
+Não é recomendado que o IE6 e IE7 sejam usados em aplicações AngularJS. A falta de suporte a tags personalizadas e eventos por mudança de hash tornam a aplicação em si muito inchada e lenta. Apesar de termos algum suporte a eles, o AngularJS é recomendado somente para ser usado com navegadores de qualidade como (Chrome, Firefox, IE8+, Safari e Opera). Esforce em evitar o uso do AngularJS com IE6 e IE7 e tudo vai da certo.
 
 AngularJS menciona que o uso de tags personalizadas é suportada no IE8 e é notado que o Angular trabalha bem com IE8 quando usado qualquer tag personalizada. Eu não creio completamente que o IE8 respeita tags personalizadas visto que um arquivo especial HTML5 é necessário para fazer tags HTML5 funcionarem no IE8. Portanto você vai precisar de definir cada uma das tags personalizads que vai usar no início do seu arquivo (document.createElement('ng-pluralize'), document.createElement('ng-view'), etc...). Então se você quiser trabalhar usando tags personalizadas ou se você quiser evitar IE8 também, então somente continue usando as tags HTML/HTML5 regulares e tudo funcionará bem.
 
@@ -45,7 +44,7 @@ Vamos entender melhor como funciona:
 ```
 
 
-***View*** - As informações que o usuário visualiza nos sites através do HTML, é renderizado a partir do momento em que a Control envia informações para View. As informações estáticas inseridas no HTML no momento do desenvolvimento é diferente das informações que são inseridas dinâmicamente. O angular trabalha com as informações dinamicas.
+***View*** - As informações que o usuário visualiza nos sites através do HTML, é renderizado a partir do momento em que a Control envia informações para View. As informações estáticas inseridas no HTML no momento do desenvolvimento é diferente das informações que são inseridas dinâmicamente. O angular trabalha com as informações dinâmicas.
 
 ***Control*** - O nome já diz, controla as informações que vem da Model e renderiza na View.
 
@@ -55,7 +54,7 @@ Nota: JSON, um acrônimo para "JavaScript Object Notation", é um formato leve p
 
 ## HandleBars
 
-O handlebars são os caracteres especiais ```{{algumacoisa}}```, eles que fazem a renderização das informações de variáveis do AngularJs, porém isso fica muito vago na explicação. No ***Olá Mundo***, explicarei melhor.
+O handlebars são os caracteres especiais ```{{algumacoisa}}```, eles que fazem a renderização das informações de variáveis do AngularJs via databind, porém isso fica muito vago na explicação. No ***Olá Mundo***, explicarei melhor.
 
 ## Iniciando uma aplicação
 
@@ -69,14 +68,13 @@ Para iniciar uma aplicação no corpo HTML é necessário inserir as referência
 </head>
 <body>
 <script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.11/angular-route.min.js"></script>
 </body>
 </html>
 ```
 
-O primeiro script é referente ao Angular e segundo script é referente as rotas, que irei explicar mais adiante.
+O script é angular.min.js referente ao Angular.
 
-Após ter incluido os arquivos, é necessário inserir directivas do Angular para que ele consiga identificar no corpo do HTML, que o arquivo é uma aplicação angular, como fazemos?
+Após ter incluido os arquivos, é necessário inserir directivas do Angular para que ele consiga identificar no corpo do HTML, que o arquivo é uma aplicação angular. As directivas do angular se parecem com atributos do html (class e id), onde passamos parametros para o css identificar. No angular, podemos passar parametros ou não, isso vai de acordo com o desenvolvedor e a lógica que está sendo aplicada.
 
 A directiva principal do angular é a ***ng-app***, é ela que dirá ao angular para que comece a trabalhar naquele HTML.
 
@@ -88,7 +86,6 @@ A directiva principal do angular é a ***ng-app***, é ela que dirá ao angular 
 </head>
 <body>
 <script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.11/angular-route.min.js"></script>
 </body>
 </html>
 ```
@@ -112,7 +109,6 @@ Ex com ```<body>```:
 </head>
 <body ng-app>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
 </body>
 </html>
 ```
@@ -127,7 +123,6 @@ Ex com ```<div>```
 <body>
 <div ng-app></div>
 <script src="http://code.angularjs.org/1.2.11/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.11/angular-route.min.js"></script>
 </body>
 </html>
 ```
@@ -136,7 +131,7 @@ A diferença entre a directiva no ```html``` ou no ```body``` não é significat
 
 ## Olá Mundo
 
-Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome". Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
+Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome", isso é uma variável. Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
 por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
 ```
@@ -149,7 +144,6 @@ por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 <input type="text" ng-model="nome">
 <p>Olá {{nome}}</p>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
 </body>
 </html>
 ```
@@ -201,15 +195,20 @@ O ensinamento será passo a passo para vocês entenderem e no final terá a fun�
 Primeiro declaramos o module do angular
 var app = angular.module('app',[]);
 
-Depois criamos uma função chamada config, onde será passado um parametro chamado $routeProvider, responsável por fazer as rotas da aplicação.
+Depois criamos uma função chamada config, onde será passado um parametro chamado $routeProvider, 
+responsável por fazer as rotas da aplicação.
 app.config(function($routeProvider){});
 
-Dentro dessa função chamamos o $routeProvider e .when que será responsável por indicar ou melhor dizendo, routiar as rotas da aplicação. O significado é "quando", então, quando indicarmos uma url na aplicação o $routeProvider vai procurar as rotas que estão configuradas com ele.
+Dentro dessa função chamamos o $routeProvider e .when que será responsável por indicar ou melhor dizendo, 
+routiar as rotas da aplicação. O significado é "quando", então, 
+quando indicarmos uma url na aplicação o $routeProvider vai procurar as rotas que estão configuradas com ele.
 app.config(function($routeProvider){
 	$route.when();
 });
 
-Dentro do .when, vamos indicar a rota a ser configurada entre aspas e dentro de uma estrutura json vamos indicar a url da página que será chamada através do campo templateUrl. Dentro das aspas temos a url, 'views/home.html', que indica a pasta views e o arquivo html que irá conter informações relevantes a home da aplicação.
+Dentro do .when, vamos indicar a rota a ser configurada entre aspas e dentro de uma estrutura json vamos indicar a
+url da página que será chamada através do campo templateUrl.
+Dentro das aspas temos a url, 'views/home.html', que indica a pasta views e o arquivo html que irá conter informações relevantes a home da aplicação.
 app.config(function($routeProvider){
 	$route.when('/', 
 	{
@@ -225,15 +224,24 @@ app.config(function($routeProvider){
 	    templateUrl: 'views/home.html'
 	});
 });
+
+Podemos declarar controllers dentro das rotas, pois no MVC trabalhamos com rotas e controllers juntos. Para declarar a controller, devemos incluir na estrutura json após o templateUrl, o campo controller e passamos o nome da controller que referencia ao template declarado. Por exemplo, abaixo temos a url que referencia ao arquivo home.html e a controller que referencia a controller HomeCtrl.
+var app = angular.module('app',[]);
+app.config(function($routeProvider){
+	$route.when('/', 
+	{
+	    templateUrl: 'views/home.html',
+	    controller: 'HomeCtrl'
+	});
+});
 ```
-Em construção
+
 
 ## Controllers
 
-Vamos aprofundar mais um pouco!
 A explicação de controllers (Control) já foi feita, em relação ao AngularJs, funciona da seguinte maneira. 
 Temos duas formas de criar controllers:
-A primeira inserimos diretamente no html e referimos a controller pela diretiva ```ng-controller```, dentro da directiva indicamos o nome da controller. E no código javascript escrevemos o que a controller irá fazer.
+A primeira inserimos diretamente no html e referenciamos a controller pela diretiva ```ng-controller```. Dentro da directiva indicamos o nome da controller e no código javascript escrevemos o que a controller irá fazer.
 
 ```
 <!DOCTYPE html>
@@ -241,15 +249,14 @@ A primeira inserimos diretamente no html e referimos a controller pela diretiva 
 <head>
 	<title>AngularJs</title>
 </head>
-<body ng-app>
-<div ng-controller="MainCtrl">
-<p>Olá {{nome}}</p>
+<body ng-app> <-- declaramos a tag ng-app para indicar ao angular
+<div ng-controller="MainCtrl"> <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
+<p>Olá {{nome}}</p> <-- variavel da controller
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
 <script type="text/javascript">
-function MainCtrl($scope){
-	$scope.nome = "Mundo";
+function MainCtrl($scope){   <-- criamos a controller
+	$scope.nome = "Mundo"; <-- atribuimos "Mundo" a variavel nome
 }
 </script>
 </body>
@@ -265,12 +272,12 @@ Podemos criar através do módulo em um arquivo js e referenciamos a controller 
 <head>
 	<title>AngularJs</title>
 </head>
-<body ng-app="App">
-<div ng-controller="MainCtrl">
-<p>Olá {{nome}}</p>
+<body ng-app="App"> <-- O "App" indica ao angular que ele trabalhará com o modulo "App", então ele busca nos scripts
+abaixo do script principal que é o angular.min.js
+<div ng-controller="MainCtrl"> <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
+<p>Olá {{nome}}</p> <-- variavel da controller
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
 <script src="app.js"></script>
 <script src="controller.js"></script>
 </body>
@@ -314,7 +321,7 @@ index.html
 
 ```
 
-home.html
+No arquivo home.html fica assim:
 ```
 <p>{{nome}}</p>
 ```
@@ -322,21 +329,21 @@ home.html
 No arquivo app.js fica assim:
 
 ```
-var App = angular.module('App',['Controller']);
-App.config(['$routeProvider',function($routeProvider){
+var App = angular.module('App',['ngRoute','Controller']);
+App.config(function($routeProvider){
  $routeProvider.when('/', 
  {
      templateUrl: 'home.html',
-     controller: 'MainCtrl'
+     controller: 'HomeCtrl'
  });
-)]);
+));
 ```
 
 No arquivo controller.js fica assim:
 
 ```
 var Ctrl = angular.module('Controller',[]);
-Ctrl.controller('MainCtrl', function($scope){
+Ctrl.controller('HomeCtrl', function($scope){
 	$scope.nome = "Mundo";
 });
 ```
