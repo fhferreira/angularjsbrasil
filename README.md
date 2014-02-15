@@ -8,8 +8,8 @@ Nivel Iniciante <a href="https://github.com/nicholasess/angularjsbrasil/blob/mas
 
 Nivel Intermediário <a href="https://github.com/nicholasess/angularjsbrasil/blob/master/intermediarios.md" target="_blank">Link</a> - Em Construção
 
-Nivel Avançado <a href="https://github.com/nicholasess/angularjsbrasil/blob/master/avancados.md" target="_blank">Link</a>
-- Em Construção
+Nivel Avançado <a href="https://github.com/nicholasess/angularjsbrasil/blob/master/avancados.md" target="_blank">Link</a> - Em Construção
+
 
 Aceito feedbacks: nicholasess@gmail.com
 Assunto FeedBack AngularJs - Github
