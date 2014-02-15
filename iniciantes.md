@@ -227,7 +227,10 @@ app.config(function($routeProvider){
 });
 
 Podemos declarar controllers dentro das rotas, pois no MVC trabalhamos com rotas e controllers juntos.
-Para declarar a controller, devemos incluir na estrutura json após o templateUrl, o campo controller e passamos o nome da controller que referencia ao template declarado. Por exemplo, abaixo temos a url que referencia ao arquivo home.html e a controller que referencia a controller HomeCtrl.
+Para declarar a controller, devemos incluir na estrutura json após o templateUrl,
+o campo controller e passamos o nome da controller que referencia ao template declarado.
+Por exemplo, abaixo temos a url que referencia ao arquivo home.html 
+e a controller que referencia a controller HomeCtrl.
 var app = angular.module('app',[]);
 app.config(function($routeProvider){
 	$route.when('/', 
