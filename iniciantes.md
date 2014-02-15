@@ -1,4 +1,4 @@
-<a class="jsbin-embed" href="http://jsbin.com/nenig/1/embed?html,console,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+
 # INICIANTES
 
 <ol>
