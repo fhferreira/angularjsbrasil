@@ -208,7 +208,8 @@ app.config(function($routeProvider){
 
 Dentro do .when, vamos indicar a rota a ser configurada entre aspas e dentro de uma estrutura json vamos indicar a
 url da página que será chamada através do campo templateUrl.
-Dentro das aspas temos a url, 'views/home.html', que indica a pasta views e o arquivo html que irá conter informações<br/> relevantes a home da aplicação.
+Dentro das aspas temos a url, 'views/home.html', 
+que indica a pasta views e o arquivo html que irá conter informações relevantes a home da aplicação.
 app.config(function($routeProvider){
 	$route.when('/', 
 	{
@@ -225,7 +226,8 @@ app.config(function($routeProvider){
 	});
 });
 
-Podemos declarar controllers dentro das rotas, pois no MVC trabalhamos com rotas e controllers juntos.<br/> Para declarar a controller, devemos incluir na estrutura json após o templateUrl, o campo controller e passamos o nome da controller que referencia ao template declarado. Por exemplo, abaixo temos a url que referencia ao arquivo home.html e a controller que referencia a controller HomeCtrl.
+Podemos declarar controllers dentro das rotas, pois no MVC trabalhamos com rotas e controllers juntos.
+Para declarar a controller, devemos incluir na estrutura json após o templateUrl, o campo controller e passamos o nome da controller que referencia ao template declarado. Por exemplo, abaixo temos a url que referencia ao arquivo home.html e a controller que referencia a controller HomeCtrl.
 var app = angular.module('app',[]);
 app.config(function($routeProvider){
 	$route.when('/', 
@@ -235,8 +237,6 @@ app.config(function($routeProvider){
 	});
 });
 ```
-
-
 ## Controllers
 
 A explicação de controllers (Control) já foi feita, em relação ao AngularJs, funciona da seguinte maneira. 
@@ -263,7 +263,6 @@ function MainCtrl($scope){   <-- criamos a controller
 </html>
 
 ``` 
-
 Podemos criar através do módulo em um arquivo js e referenciamos a controller em outro arquivo.
 
 ```
