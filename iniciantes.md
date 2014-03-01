@@ -19,6 +19,8 @@
 O AngularJs surgiu em meados de 2009, foi criado por dois funcionários da Google e após um tempo a Google viu o potêncial do projeto e adotou, e hoje existe uma equipe focada somente no AngularJs.
 AngularJs é um framework JavaScript MVC/MVVM, fácil de ser aprendido e a curva de aprendizado é pequena em relação a outros frameworks. Como todo framework o começo é fácil, mas conforme vai se aprofundando, é necessário um pouco mais de atenção, mas não irá desanimar. O AngularJs é uma ferramenta essencial para quem deseja criar sistemas (web apps) com facilidade e ter todo controle do lado client (Front).
 
+Para acessar o site oficial do AngularJs <a href="http://angularjs.org/" target="_blank">Clique aqui</a>
+
 ## AngularJs e Internet Explorer
 
 Não é recomendado que o IE6 e IE7 sejam usados em aplicações AngularJS. A falta de suporte a tags personalizadas e eventos por mudança de hash tornam a aplicação em si muito inchada e lenta. Apesar de termos algum suporte a eles, o AngularJS é recomendado somente para ser usado com navegadores de qualidade como (Chrome, Firefox, IE8+, Safari e Opera). Esforce em evitar o uso do AngularJS com IE6 e IE7 e tudo vai da certo.
