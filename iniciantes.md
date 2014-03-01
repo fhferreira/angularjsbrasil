@@ -4,10 +4,9 @@
 	<li>Introdução&#10004;</li>
 	<li>AngularJs e Internet Explorer&#10004;</li>
 	<li>MVC&#10004;</li>
-	<li>DataBind</li>
 	<li>HandleBars&#10004;</li>
 	<li>Iniciando uma aplicação&#10004;</li>
-	<li>Olá Mundo&#10004;</li>
+	<li>Olá Mundo e DataBind&#10004;</li>
 	<li>Module&#10004;</li>
 	<li>Scope</li>	
 	<li>Routers&#10004;</li>
@@ -132,9 +131,9 @@ Ex com ```<div>```
 
 A diferença entre a directiva no ```html``` ou no ```body``` não é significativa, em questão da directiva ser na ```div```, é que aplicação só será válida dentro da ```div```. Ou seja, se criarmos algo fora da ```div``` não terá resultados.
 
-## Olá Mundo
+## Olá Mundo e DataBind
 
-Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome", isso é uma variável. Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, 
+Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome", isso é uma variável. Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, essa comunicação se chama DataBind.
 por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
 ```
@@ -189,9 +188,9 @@ então fica assim:
 var App = angular.module('App',['Controller','Service']);
 ```
 
-## Scope
+## $scope
 
-Em construção
+<img src="https://leanpub.com/site_images/livro-angularJS/chapter2----concepts-controller.png" />
 
 ## Rotas
 
