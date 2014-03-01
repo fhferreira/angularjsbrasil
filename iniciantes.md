@@ -1,16 +1,16 @@
 # INICIANTES
 
 <ol>
-	<li>Introdução&#10004;</li>
-	<li>AngularJs e Internet Explorer&#10004;</li>
-	<li>MVC&#10004;</li>
-	<li>HandleBars&#10004;</li>
-	<li>Iniciando uma aplicação&#10004;</li>
-	<li>Olá Mundo e DataBind&#10004;</li>
-	<li>Module&#10004;</li>
-	<li>$scope</li>	
-	<li>Routers&#10004;</li>
-	<li>Controllers&#10004;</li>
+	<li>Introdução &#10004;</li>
+	<li>AngularJs e Internet Explorer &#10004;</li>
+	<li>MVC &#10004;</li>
+	<li>HandleBars &#10004;</li>
+	<li>Iniciando uma aplicação &#10004;</li>
+	<li>Olá Mundo e DataBind &#10004;</li>
+	<li>Module &#10004;</li>
+	<li>Routers &#10004;</li>
+	<li>Controllers &#10004;</li>
+	<li>$scope &#10004;</li>
 </ol>
 
 
