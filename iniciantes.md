@@ -205,12 +205,12 @@ O ensinamento será passo a passo para vocês entenderem e no final terá a fun�
 Primeiro declaramos o module do angular
 var app = angular.module('app',[]);
 
-Depois criamos uma função chamada config, onde será passado um parametro chamado $routeProvider, 
+Depois criamos uma função chamada config, onde será passado um callback chamado $routeProvider, 
 responsável por fazer as rotas da aplicação.
 app.config(function($routeProvider){});
 
 Dentro dessa função chamamos o $routeProvider e .when que será responsável por indicar ou melhor dizendo, 
-routiar as rotas da aplicação. O significado é "quando", então, 
+routear as rotas da aplicação. O significado é "quando", então, 
 quando indicarmos uma url na aplicação o $routeProvider vai procurar as rotas que estão configuradas com ele.
 app.config(function($routeProvider){
 	$route.when();
