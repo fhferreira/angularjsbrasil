@@ -146,8 +146,7 @@ por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 </body>
 </html>
 ```
-
-<a href="http://codepen.io/nicholasess/pen/AslmG" target="_blank">Visualizar exemplo na prática</a>
+<a class="jsbin-embed" href="http://jsbin.com/kotiv/1/embed?html,js,output" target="_blank">Exemplo</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 ## Module
 
@@ -401,4 +400,4 @@ function Ctrl($scope){
 </body>
 </html>
 ```
-<a class="jsbin-embed" href="http://jsbin.com/dicop/1/embed?html,css,js,output">AngularJs</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/dicop/1/embed?html,css,js,output">Exemplo</a><script src="http://static.jsbin.com/js/embed.js"></script>
