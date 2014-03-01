@@ -1,4 +1,3 @@
-
 # INICIANTES
 
 <ol>
@@ -53,9 +52,12 @@ Ex: Em um cadastro de produto, os campos para serem preenchidos são a View, a p
 
 Nota: JSON, um acrônimo para "JavaScript Object Notation", é um formato leve para intercâmbio de dados computacionais. JSON é um subconjunto da notação de objeto de JavaScript, mas seu uso não requer JavaScript exclusivamente  - <a href="http://pt.wikipedia.org/wiki/JSON" target="_blank">Wikipedia</a>
 
+## DataBind
+
+
 ## HandleBars
 
-O handlebars são os caracteres especiais ```{{algumacoisa}}```, eles que fazem a renderização das informações de variáveis do AngularJs via databind, porém isso fica muito vago na explicação. No ***Olá Mundo***, explicarei melhor.
+O handlebars são os caracteres especiais ```{{}}```, eles que fazem a renderização das informações de variáveis do AngularJs via databind.
 
 ## Iniciando uma aplicação
 
@@ -171,13 +173,21 @@ será inserido o parametro 'App' para a comunicação.
 
 Ficando desse jeito <html ng-app="App">
 
-Dentro dos couchetes ficam as referências de outros módulos, digamos que tem o módulo de controllers,
-então fica assim:
-
-var App = angular.module('App',['Controllers']);
-
 ```
 Obs: Somente o módulo "central" será referenciado no HTML, o restante será interligado nos couchetes.
+```
+Para criar módulos de controllers, services e etc. Basta criar uma representação identica quando se criou o módulo "central".
+Para controller fica assim:
+var Ctrl = angular.module('Controller',[]);
+
+Para service fica assim:
+var Serv = angular.module('Service',[]);
+
+Dentro dos couchetes ficam as referências de outros módulos, para referenciar controller e service,
+então fica assim:
+
+var App = angular.module('App',['Controller','Service']);
+```
 
 ## Scope
 
