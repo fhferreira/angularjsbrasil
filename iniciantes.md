@@ -8,7 +8,7 @@
 	<li>Iniciando uma aplicação&#10004;</li>
 	<li>Olá Mundo e DataBind&#10004;</li>
 	<li>Module&#10004;</li>
-	<li>Scope</li>	
+	<li>$scope</li>	
 	<li>Routers&#10004;</li>
 	<li>Controllers&#10004;</li>
 </ol>
@@ -50,9 +50,6 @@ Vamos entender melhor como funciona:
 Ex: Em um cadastro de produto, os campos para serem preenchidos são a View, a partir do momento que você envia as informações do produto para serem cadastradas, essas informações passam pela Control, que verifica campos preenchidos, formatos e etc. E após isso conversa com a Model para enviar as informações ao banco de dados.
 
 Nota: JSON, um acrônimo para "JavaScript Object Notation", é um formato leve para intercâmbio de dados computacionais. JSON é um subconjunto da notação de objeto de JavaScript, mas seu uso não requer JavaScript exclusivamente  - <a href="http://pt.wikipedia.org/wiki/JSON" target="_blank">Wikipedia</a>
-
-## DataBind
-
 
 ## HandleBars
 
@@ -188,10 +185,6 @@ então fica assim:
 var App = angular.module('App',['Controller','Service']);
 ```
 
-## $scope
-
-<img src="https://leanpub.com/site_images/livro-angularJS/chapter2----concepts-controller.png" />
-
 ## Rotas
 
 Vamos começar com uma pergunta, o que seria rotas? <br>
@@ -202,7 +195,25 @@ No AngularJs é um pouco mais fácil, as rotas ficam idênticas ao .htacces no s
 ```
 O ensinamento será passo a passo para vocês entenderem e no final terá a função pronta.
 
-Primeiro declaramos o module do angular
+No arquivo index.html será adicionado um novo script chamado angular-route.js, ele contêm toda a lógica do angularjs voltado a rotas.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AngularJs</title>
+</head>
+<body ng-app="App">
+<div ng-view></div>
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>
+
+A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
+
+Declaramos o module do angular
 var app = angular.module('app',[]);
 
 Depois criamos uma função chamada config, onde será passado um callback chamado $routeProvider, 
@@ -254,6 +265,7 @@ app.config(function($routeProvider){
 
 A explicação de controllers (Control) já foi feita, em relação ao AngularJs, funciona da seguinte maneira. 
 Temos duas formas de criar controllers:
+
 A primeira inserimos diretamente no html e referenciamos a controller pela diretiva ```ng-controller```. Dentro da directiva indicamos o nome da controller e no código javascript escrevemos o que a controller irá fazer.
 
 ```
@@ -264,7 +276,7 @@ A primeira inserimos diretamente no html e referenciamos a controller pela diret
 </head>
 <body ng-app> <-- declaramos a tag ng-app para indicar ao angular
 <div ng-controller="MainCtrl"> <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
-<p>Olá {{nome}}</p> <-- variavel da controller
+<p>Olá {{nome}}</p> <-- variavel nome da controller
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
 <script type="text/javascript">
@@ -287,7 +299,7 @@ Podemos criar através do módulo em um arquivo js e referenciamos a controller 
 <body ng-app="App"> <-- O "App" indica ao angular que ele trabalhará com o modulo "App", então ele busca nos scripts
 abaixo do script principal que é o angular.min.js
 <div ng-controller="MainCtrl"> <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
-<p>Olá {{nome}}</p> <-- variavel da controller
+<p>Olá {{nome}}</p> <-- variavel nome da controller
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
 <script src="app.js"></script>
@@ -359,3 +371,34 @@ Ctrl.controller('HomeCtrl', function($scope){
 	$scope.nome = "Mundo";
 });
 ```
+A controller é responsável por manter a regra de negócio da sua aplicação, segue uma representação da controller.
+<img src="https://leanpub.com/site_images/livro-angularJS/chapter2----concepts-controller.png" />
+
+## $scope
+
+O $scope é um ponteiro da sua controller, ele aponta para variaveis ou funções criadas dentro da controller. E no html ele aponta para variaveis tanto no ng-model quanto para {{variavel}}.
+
+Um exemplo simples de como a $scope funciona, é um "Olá Mundo", onde o "Olá" é um texto estático e "Mundo" sendo referenciado dentro da controller através do ```$scope.texto```, no html sendo referenciado pelo ```ng-model="texto"``` e através do handlebars {{texto}}.
+
+Html e JavaScript
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>AngularJs</title>
+</head>
+<body ng-app>
+<div ng-controller="Ctrl">
+<input type="text" ng-model="texto">
+<p>Olá {{texto}}</p>
+</div>
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<script>
+function Ctrl($scope){
+  $scope.texto = "Mundo";
+}
+</script>
+</body>
+</html>
+```
+<a class="jsbin-embed" href="http://jsbin.com/dicop/1/embed?html,css,js,output">AngularJs</a><script src="http://static.jsbin.com/js/embed.js"></script>
