@@ -158,29 +158,29 @@ Para se criar um módulo "central", onde referenciará ao arquivo app.js, temos 
 Na prática fica assim:
 
 ```
-A primeira coisa a se fazer é criar uma variável e depois nomear o módulo.
+//A primeira coisa a se fazer é criar uma variável e depois nomear o módulo.
 
 var App = angular.module('App',[]);
 
-A função "angular.module();", como já é alto declarável, cria um módulo.
-O parametro 'App' é a nomeação do módulo e fará a comunicação no HTML, na directiva ng-app,
-será inserido o parametro 'App' para a comunicação.
+//A função "angular.module();", como já é alto declarável, cria um módulo.
+//O parametro 'App' é a nomeação do módulo e fará a comunicação no HTML, na directiva ng-app,
+//será inserido o parametro 'App' para a comunicação.
 
-Ficando desse jeito <html ng-app="App">
+//Ficando desse jeito <html ng-app="App">
 
 ```
 Obs: Somente o módulo "central" será referenciado no HTML, o restante será interligado nos couchetes.
 ```
-Para criar módulos de controllers, services e etc. 
-Basta criar uma representação identica quando se criou o módulo "central".
-Para controller fica assim:
+//Para criar módulos de controllers, services e etc. 
+//Basta criar uma representação identica quando se criou o módulo "central".
+//Para controller fica assim:
 var Ctrl = angular.module('Controller',[]);
 
-Para service fica assim:
+//Para service fica assim:
 var Serv = angular.module('Service',[]);
 
-Dentro dos couchetes ficam as referências de outros módulos, para referenciar controller e service,
-então fica assim:
+//Dentro dos couchetes ficam as referências de outros módulos, para referenciar controller e service,
+//então fica assim:
 
 var App = angular.module('App',['Controller','Service']);
 ```
@@ -192,11 +192,10 @@ Quando acessamos um site comum usando um servidor apache, o servidor redireciona
 
 No AngularJs é um pouco mais fácil, as rotas ficam idênticas ao .htacces no servidor apache, podemos criar um arquivo separado as rotas ou no mesmo arquivo do módulo "central", vamos a prática.
 
-```html
 O ensinamento será passo a passo para vocês entenderem e no final terá a função pronta.
-
-No arquivo index.html será adicionado um novo script chamado angular-route.js,
-ele contêm toda a lógica do angularjs voltado a rotas.
+```html
+//No arquivo index.html será adicionado um novo script chamado angular-route.js,
+//ele contêm toda a lógica do angularjs voltado a rotas.
 
 <!DOCTYPE html>
 <html>
@@ -213,26 +212,26 @@ ele contêm toda a lógica do angularjs voltado a rotas.
 </html>
 ```
 ```
-A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
+//A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
 
-Declaramos o module do angular
+//Declaramos o module do angular
 var app = angular.module('app',[]);
 
-Depois criamos uma função chamada config, onde será passado um callback chamado $routeProvider, 
-responsável por fazer as rotas da aplicação.
+//Depois criamos uma função chamada config, onde será passado um callback chamado $routeProvider, 
+//responsável por fazer as rotas da aplicação.
 app.config(function($routeProvider){});
 
-Dentro dessa função chamamos o $routeProvider e .when que será responsável por indicar ou melhor dizendo, 
-routear as rotas da aplicação. O significado é "quando", então, 
-quando indicarmos uma url na aplicação o $routeProvider vai procurar as rotas que estão configuradas com ele.
+//Dentro dessa função chamamos o $routeProvider e .when que será responsável por indicar ou melhor dizendo, 
+//routear as rotas da aplicação. O significado é "quando", então, 
+//quando indicarmos uma url na aplicação o $routeProvider vai procurar as rotas que estão configuradas com ele.
 app.config(function($routeProvider){
 	$route.when();
 });
 
-Dentro do .when, vamos indicar a rota a ser configurada entre aspas e dentro de uma estrutura json vamos indicar a
-url da página que será chamada através do campo templateUrl.
-Dentro das aspas temos a url, 'views/home.html', 
-que indica a pasta views e o arquivo html que irá conter informações relevantes a home da aplicação.
+//Dentro do .when, vamos indicar a rota a ser configurada entre aspas e dentro de uma estrutura json vamos indicar a
+//url da página que será chamada através do campo templateUrl.
+//Dentro das aspas temos a url, 'views/home.html', 
+//que indica a pasta views e o arquivo html que irá conter informações relevantes a home da aplicação.
 app.config(function($routeProvider){
 	$route.when('/', 
 	{
@@ -240,7 +239,7 @@ app.config(function($routeProvider){
 	});
 });
 
-No final ficamos assim:
+//No final ficamos assim:
 var app = angular.module('app',[]);
 app.config(function($routeProvider){
 	$route.when('/', 
@@ -249,11 +248,11 @@ app.config(function($routeProvider){
 	});
 });
 
-Podemos declarar controllers dentro das rotas, pois no MVC trabalhamos com rotas e controllers juntos.
-Para declarar a controller, devemos incluir na estrutura json após o templateUrl,
-o campo controller e passamos o nome da controller que referencia ao template declarado.
-Por exemplo, abaixo temos a url que referencia ao arquivo home.html 
-e a controller que referencia a controller HomeCtrl.
+//Podemos declarar controllers dentro das rotas, pois no MVC trabalhamos com rotas e controllers juntos.
+//Para declarar a controller, devemos incluir na estrutura json após o templateUrl,
+//o campo controller e passamos o nome da controller que referencia ao template declarado.
+//Por exemplo, abaixo temos a url que referencia ao arquivo home.html 
+//e a controller que referencia a controller HomeCtrl.
 var app = angular.module('app',[]);
 app.config(function($routeProvider){
 	$route.when('/', 
@@ -276,9 +275,9 @@ A primeira inserimos diretamente no html e referenciamos a controller pela diret
 <head>
 	<title>AngularJs</title>
 </head>
-<body ng-app> <-- declaramos a tag ng-app para indicar ao angular
-<div ng-controller="MainCtrl"> <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
-<p>Olá {{nome}}</p> <-- variavel nome da controller
+<body ng-app> // <-- declaramos a tag ng-app para indicar ao angular
+<div ng-controller="MainCtrl"> // <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
+<p>Olá {{nome}}</p> // <-- variavel nome da controller
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
 <script type="text/javascript">
@@ -298,10 +297,10 @@ Podemos criar através do módulo em um arquivo js e referenciamos a controller 
 <head>
 	<title>AngularJs</title>
 </head>
-<body ng-app="App"> <-- O "App" indica ao angular que ele trabalhará com o modulo "App", então ele busca nos scripts
+<body ng-app="App"> // <-- O "App" indica ao angular que ele trabalhará com o modulo "App", então ele busca nos scripts
 abaixo do script principal que é o angular.min.js
-<div ng-controller="MainCtrl"> <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
-<p>Olá {{nome}}</p> <-- variavel nome da controller
+<div ng-controller="MainCtrl"> // <-- declaramos a tag ng-controller e indicamos com qual controller vamos trabalhar
+<p>Olá {{nome}}</p> // <-- variavel nome da controller
 </div>
 <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
 <script src="app.js"></script>
