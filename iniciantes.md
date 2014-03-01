@@ -32,7 +32,7 @@ Vamos entender melhor como funciona:
 
 ***Model*** - É a parte do sistema onde é recebido as informações do banco de dados/webservice e etc. Para tratar essas informações no front, eventualmente usamos o ```$.ajax (XHR - XMLHttpRequest)``` para jQuery, no AngularJs usamos o ```$http```, essas funções tem o intuito de enviar e receber informações através dos métodos [GET,POST,PUT,DELETE] no formato JSON. A model conversa com a Control no momento em que a Control envia ou busca informações. Abaixo segue uma estrutura JSON.
 
-```
+```js
 {
     "users": [{
         "name": "Nicholas Eduardo",
@@ -41,7 +41,6 @@ Vamos entender melhor como funciona:
 }
 
 ```
-
 
 ***View*** - As informações que o usuário visualiza nos sites através do HTML, é renderizado a partir do momento em que a Control envia informações para View. As informações estáticas inseridas no HTML no momento do desenvolvimento é diferente das informações que são inseridas dinâmicamente. O angular trabalha com as informações dinâmicas.
 
@@ -59,7 +58,7 @@ O handlebars são os caracteres especiais ```{{}}```, eles que fazem a renderiza
 
 Para iniciar uma aplicação no corpo HTML é necessário inserir as referências do AngulaJS nos scripts.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +76,7 @@ Após ter incluido os arquivos, é necessário inserir directivas do Angular par
 
 A directiva principal do angular é a ***ng-app***, é ela que dirá ao angular para que comece a trabalhar naquele HTML.
 
-```
+```html
 <!DOCTYPE html>
 <html ng-app>
 <head>
@@ -92,7 +91,7 @@ A directiva principal do angular é a ***ng-app***, é ela que dirá ao angular 
 A directiva ***ng-app*** pode ser incluida no ```<html>``` ou ```<body>``` ou em uma ```<div>``` qualquer.
 
 Ex com ```<html>```:
-```
+```html
 <!DOCTYPE html>
 <html ng-app>
 <head>
@@ -113,7 +112,7 @@ Ex com ```<body>```:
 ```
 Ex com ```<div>```
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,7 +133,7 @@ Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriorment
 
 Por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,7 +192,7 @@ Quando acessamos um site comum usando um servidor apache, o servidor redireciona
 
 No AngularJs é um pouco mais fácil, as rotas ficam idênticas ao .htacces no servidor apache, podemos criar um arquivo separado as rotas ou no mesmo arquivo do módulo "central", vamos a prática.
 
-```
+```html
 O ensinamento será passo a passo para vocês entenderem e no final terá a função pronta.
 
 No arquivo index.html será adicionado um novo script chamado angular-route.js,
@@ -212,7 +211,8 @@ ele contêm toda a lógica do angularjs voltado a rotas.
 <script src="controller.js"></script>
 </body>
 </html>
-
+```
+```js
 A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
 
 Declaramos o module do angular
@@ -271,7 +271,7 @@ Temos duas formas de criar controllers:
 A primeira inserimos diretamente no html e referenciamos a controller pela diretiva ```ng-controller```. Dentro da directiva indicamos o nome da controller e no código javascript escrevemos o que a controller irá fazer.
 
 ```
-<!DOCTYPE html>
+<!DOCTYPE html>html
 <html>
 <head>
 	<title>AngularJs</title>
