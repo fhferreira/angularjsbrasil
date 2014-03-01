@@ -212,7 +212,7 @@ ele contêm toda a lógica do angularjs voltado a rotas.
 </body>
 </html>
 ```
-```js
+```
 A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
 
 Declaramos o module do angular
@@ -270,7 +270,7 @@ Temos duas formas de criar controllers:
 
 A primeira inserimos diretamente no html e referenciamos a controller pela diretiva ```ng-controller```. Dentro da directiva indicamos o nome da controller e no código javascript escrevemos o que a controller irá fazer.
 
-```
+```html
 <!DOCTYPE html>html
 <html>
 <head>
@@ -292,7 +292,7 @@ function MainCtrl($scope){   <-- criamos a controller
 ``` 
 Podemos criar através do módulo em um arquivo js e referenciamos a controller em outro arquivo.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -313,13 +313,13 @@ abaixo do script principal que é o angular.min.js
 
 No arquivo app.js fica assim:
 
-```
+```js
 var App = angular.module('App',['Controller']);
 ```
 
 No arquivo controller.js fica assim:
 
-```
+```js
 var Ctrl = angular.module('Controller',[]);
 Ctrl.controller('MainCtrl', function($scope){
 	$scope.nome = "Mundo";
@@ -330,7 +330,7 @@ Ou podemos fazer com rotas que daria o mesmo resultado.
 Primeiro vamos criar arquivo html que ficará a aplicação e outro arquivo html que será referenciado pela rota.
 
 index.html
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -348,13 +348,13 @@ index.html
 ```
 
 No arquivo home.html fica assim:
-```
+```html
 <p>{{nome}}</p>
 ```
 
 No arquivo app.js fica assim:
 
-```
+```js
 var App = angular.module('App',['ngRoute','Controller']);
 App.config(function($routeProvider){
  $routeProvider.when('/', 
@@ -367,7 +367,7 @@ App.config(function($routeProvider){
 
 No arquivo controller.js fica assim:
 
-```
+```js
 var Ctrl = angular.module('Controller',[]);
 Ctrl.controller('HomeCtrl', function($scope){
 	$scope.nome = "Mundo";
@@ -383,7 +383,7 @@ O $scope é um ponteiro da sua controller, ele aponta para variaveis ou funçõe
 Um exemplo simples de como a $scope funciona, é um "Olá Mundo", onde o "Olá" é um texto estático e "Mundo" sendo referenciado dentro da controller através do ```$scope.texto```, no html sendo referenciado pelo ```ng-model="texto"``` e através do handlebars ```{{texto}}```.
 
 Html e JavaScript
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
