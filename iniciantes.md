@@ -131,7 +131,8 @@ A diferença entre a directiva no ```html``` ou no ```body``` não é significat
 ## Olá Mundo e DataBind
 
 Para criarmos um Olá Mundo, iremos pegar a estrutura que foi usada anteriormente. A tag ```ng-model``` é a model da sua aplicação que faz comunicação direta com a variável, ela referência a variável na aplicação, vemos que dentro da ng-model existe o "nome" e dentro dos caracteres especiais ```{{}}``` (handlebars), existe a mesma coisa "nome", isso é uma variável. Quando digitarmos algo no input que contêm o ng-model, começará uma comunicação e dentro do handlebars aparecerá o que você digitou, essa comunicação se chama DataBind.
-por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
+
+Por exemplo: Se digitarmos "Mundo", irá formar Olá Mundo.
 
 ```
 <!DOCTYPE html>
@@ -171,7 +172,8 @@ Ficando desse jeito <html ng-app="App">
 ```
 Obs: Somente o módulo "central" será referenciado no HTML, o restante será interligado nos couchetes.
 ```
-Para criar módulos de controllers, services e etc. Basta criar uma representação identica quando se criou o módulo "central".
+Para criar módulos de controllers, services e etc. 
+Basta criar uma representação identica quando se criou o módulo "central".
 Para controller fica assim:
 var Ctrl = angular.module('Controller',[]);
 
@@ -194,7 +196,8 @@ No AngularJs é um pouco mais fácil, as rotas ficam idênticas ao .htacces no s
 ```
 O ensinamento será passo a passo para vocês entenderem e no final terá a função pronta.
 
-No arquivo index.html será adicionado um novo script chamado angular-route.js, ele contêm toda a lógica do angularjs voltado a rotas.
+No arquivo index.html será adicionado um novo script chamado angular-route.js,
+ele contêm toda a lógica do angularjs voltado a rotas.
 
 <!DOCTYPE html>
 <html>
@@ -377,7 +380,7 @@ A controller é responsável por manter a regra de negócio da sua aplicação, 
 
 O $scope é um ponteiro da sua controller, ele aponta para variaveis ou funções criadas dentro da controller. E no html ele aponta para variaveis tanto no ng-model quanto para {{variavel}}.
 
-Um exemplo simples de como a $scope funciona, é um "Olá Mundo", onde o "Olá" é um texto estático e "Mundo" sendo referenciado dentro da controller através do ```$scope.texto```, no html sendo referenciado pelo ```ng-model="texto"``` e através do handlebars {{texto}}.
+Um exemplo simples de como a $scope funciona, é um "Olá Mundo", onde o "Olá" é um texto estático e "Mundo" sendo referenciado dentro da controller através do ```$scope.texto```, no html sendo referenciado pelo ```ng-model="texto"``` e através do handlebars ```{{texto}}```.
 
 Html e JavaScript
 ```
@@ -401,3 +404,4 @@ function Ctrl($scope){
 </html>
 ```
 <a class="jsbin-embed" href="http://jsbin.com/dicop/1/embed?html,css,js,output">Exemplo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+
