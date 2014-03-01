@@ -196,7 +196,7 @@ No AngularJs é um pouco mais fácil, as rotas ficam idênticas ao .htacces no s
 
 O ensinamento será passo a passo para vocês entenderem e no final terá a função pronta.
 ```html
-//No arquivo index.html será adicionado um novo script chamado angular-route.js,
+//No arquivo index.html será adicionado um novo script chamado angular-route.min.js,
 //ele contêm toda a lógica do angularjs voltado a rotas.
 
 <!DOCTYPE html>
@@ -213,9 +213,9 @@ O ensinamento será passo a passo para vocês entenderem e no final terá a fun�
 </body>
 </html>
 ```
-```
-//A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
 
+A tag ng-view renderiza as rotas que faremos a seguir, isso é uma forma de renderizar templates linkando no html.
+```
 //Declaramos o module do angular
 var app = angular.module('app',[]);
 
